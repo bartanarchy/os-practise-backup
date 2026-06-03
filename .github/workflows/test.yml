@@ -8,6 +8,9 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       
+      - name: Debug list files
+        run: ls -l
+      
       - name: Set permission
         run: chmod +x backup.sh
       
@@ -15,6 +18,6 @@ jobs:
         run: |
           mkdir Documents
           echo "file1" > Documents/file1.txt
-          ./backup.sh
+          bash backup.sh
           test -f backup/file1.txt
 

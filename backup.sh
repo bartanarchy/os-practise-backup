@@ -1,7 +1,6 @@
 #!/bin/bash
-SRC=$HOME/Documents
-DEST=$HOME/backup
+# Backup sederhana: copy file dari Documents ke backup
 
-mkdir -p $DEST
-rsync -av $SRC/ $DEST/
+mkdir -p backup
+cp Documents/* backup/
 

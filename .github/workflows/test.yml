@@ -1,0 +1,16 @@
+name: Autograding
+
+on: [push]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      
+      - name: Run backup script
+        run: |
+          mkdir Documents
+          echo "file1" > Documents/file1.txt
+          ./backup.sh
+          test -f backup/file1.txt
